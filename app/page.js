@@ -14,6 +14,7 @@ import {
 const skills = [
   "Web Development",
   "SEO Optimization",
+  "Google Analytics",
   "Blog Development",
   "Full Stack ERP Development",
   "Proficient Data Analytics using Python & R Programming",
