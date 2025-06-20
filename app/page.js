@@ -56,13 +56,13 @@ export default function HomePage() {
         title={
           <div className="flex items-center gap-2">
             <Image
-              src="/p1.png"
+              src="/"
               alt="Caroline Mwenda"
               width={24}
               height={24}
               className="rounded-full border-2 border-white"
             />
-            <span>Caroline Mwenda</span>
+            <span>nash</span>
           </div>
         }
       >
@@ -71,7 +71,7 @@ export default function HomePage() {
           {/* Hero */}
           <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10 mb-16">
             <div className="flex-1">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-5xl font-bold mb-4">
                 Hi, I am Caroline Kanana Mwenda
               </h2>
               <p className="text-base sm:text-lg leading-relaxed mb-3">
@@ -162,11 +162,11 @@ export default function HomePage() {
               {/* Reveal Card */}
               <div className="w-full bg-[#0E0E10] rounded-2xl flex justify-center items-center h-[24rem]">
                 <TextRevealCard
-                  text="Let's collaborate on your next big idea"
+                  text="I design and develop your Imagination."
                   revealText="Code it. Build it. Ship it!"
                 >
                   <TextRevealCardTitle>
-                    Turning ideas into full-stack software.
+                    I design and develop your Imagination.
                   </TextRevealCardTitle>
                   <TextRevealCardDescription>
                     Ready to design, develop, and deploy digital solutions tailored to your needs.
