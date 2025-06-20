@@ -1,103 +1,241 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
+import { FaFeather } from "react-icons/fa6";
+import { FollowerPointerCard } from "@/components/ui/following-pointer";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import {
+  TextRevealCard,
+  TextRevealCardTitle,
+  TextRevealCardDescription,
+} from "@/components/ui/text-reveal-card";
 
-export default function Home() {
+const skills = [
+  "Web Development",
+  "SEO Optimization",
+  "Blog Development",
+  "Full Stack ERP Development",
+  "Proficient Data Analytics using Python & R Programming",
+  "Databases: SQL and NoSQL (MongoDB)",
+];
+
+const technologies = Array.from({ length: 9 }, (_, i) => `/Icn${i + 1}.svg`);
+
+const projects = [
+  {
+    title: "Network Supply Management System",
+    desc: "Manage network subscription management by ensuring only users who have active subscriptions and are authenticated by RADIUS have access to network.",
+    img: "/f1.png",
+    link: "https://github.com/CarolineMwenda/LeaseTrack",
+  },
+  {
+    title: "Property Management Software",
+    desc: "Rent collection and property listing made easier.",
+    img: "/f2.png",
+    link: "https://www.kejeka.com/",
+  },
+  {
+    title: "Mind and Health Hub",
+    desc: "A blog with mental health awareness content.",
+    img: "/f3.png",
+    link: "https://mindbrainhealthhub.net/",
+  },
+  {
+    title: "Clinic Website",
+    desc: "Clinical health made known.",
+    img: "/f4.png",
+    link: "https://jmn-mental-healthcare.vercel.app/blog",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <FollowerPointerCard
+        title={
+          <div className="flex items-center gap-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/p1.png"
+              alt="Caroline Mwenda"
+              width={24}
+              height={24}
+              className="rounded-full border-2 border-white"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <span>Caroline Mwenda</span>
+          </div>
+        }
+      >
+        <main className="min-h-screen bg-blue-100 text-[#095e63] px-4 py-12 flex flex-col items-center">
+
+          {/* Hero */}
+          <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10 mb-16">
+            <div className="flex-1">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+                Hi, I am Caroline Kanana Mwenda
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed mb-3">
+                I am a passionate software developer with expertise in:
+              </p>
+              <ul className="space-y-2">
+                {skills.map((skill, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-base sm:text-lg">
+                    <FaFeather className="text-[#095e63]" />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex-1 flex justify-center">
+              <Image
+                src="/p1.png"
+                alt="Caroline Kanana Mwenda"
+                width={320}
+                height={320}
+                className="rounded-xl object-cover transition-transform duration-300 hover:scale-105"
+                style={{ border: "none", boxShadow: "none" }}
+              />
+            </div>
+          </div>
+
+          {/* Graphics Design Section */}
+          <div className="w-full max-w-6xl mb-16 flex flex-col items-center text-center">
+            <h1 className="text-3xl font-bold mb-4">Graphics Design Content</h1>
+            <a
+              href="https://www.canva.com/design/DAGq1heeqAE/T9gGbEVrd3Z9mwE5CeHTmA/edit?utm_content=DAGq1heeqAE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative px-6 py-3 rounded-full text-white bg-black font-semibold transition hover:scale-105"
+            >
+              <span className="z-10 relative">Graphic Samples</span>
+              <span className="absolute inset-0 rounded-full border-2 border-white animate-pulse opacity-40"></span>
+            </a>
+          </div>
+
+          {/* Technologies */}
+          <div className="w-full mb-16">
+            <h1 className="text-3xl font-bold text-center mb-6">Technologies</h1>
+            <div className="relative w-full max-w-4xl overflow-hidden">
+              <div className="flex gap-8 whitespace-nowrap animate-scroll">
+                {[...technologies, ...technologies].map((src, index) => (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`Tech ${index + 1}`}
+                    className="h-16 w-16 object-contain"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Projects */}
+          <h1 className="text-3xl font-bold mb-10">Featured Projects</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl w-full">
+            {projects.map((project, i) => (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" key={i}>
+                <CardContainer className="inter-var">
+                  <CardBody className="bg-white group/card rounded-xl p-6 border border-black/[0.1] dark:border-white/[0.2] w-full h-auto">
+                    <CardItem translateZ="50" className="text-xl font-bold">
+                      {project.title}
+                    </CardItem>
+                    <CardItem as="p" translateZ="60" className="text-sm mt-2">
+                      {project.desc}
+                    </CardItem>
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={project.img}
+                        alt={project.title}
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                      />
+                    </CardItem>
+                  </CardBody>
+                </CardContainer>
+              </a>
+            ))}
+          </div>
+
+          {/* Get in Touch */}
+          <div className="w-full max-w-6xl mt-20">
+            <h1 className="text-3xl font-bold text-center mb-6">Get in Touch</h1>
+            <div className="flex flex-col gap-6">
+              {/* Reveal Card */}
+              <div className="w-full bg-[#0E0E10] rounded-2xl flex justify-center items-center h-[24rem]">
+                <TextRevealCard
+                  text="Let's collaborate on your next big idea"
+                  revealText="Code it. Build it. Ship it!"
+                >
+                  <TextRevealCardTitle>
+                    Turning ideas into full-stack software.
+                  </TextRevealCardTitle>
+                  <TextRevealCardDescription>
+                    Ready to design, develop, and deploy digital solutions tailored to your needs.
+                  </TextRevealCardDescription>
+                </TextRevealCard>
+              </div>
+
+              {/* Form */}
+              <div className="bg-gray-200 text-black rounded-xl p-8">
+                <form className="space-y-5">
+                  <div>
+                    <label className="block font-semibold mb-1">Full Name</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded border border-gray-300"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-1">Company</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-2 rounded border border-gray-300"
+                      placeholder="Company name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-1">Phone Number</label>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-2 rounded border border-gray-300"
+                      placeholder="Phone number"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-semibold mb-1">Email</label>
+                    <input
+                      type="email"
+                      className="w-full px-4 py-2 rounded border border-gray-300"
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-orange-500 text-white px-6 py-2 rounded font-semibold hover:bg-orange-600 transition"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </FollowerPointerCard>
+
+      {/* Scroll animation */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 20s linear infinite;
+        }
+      `}</style>
+    </>
   );
 }
