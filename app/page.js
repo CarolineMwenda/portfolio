@@ -57,22 +57,22 @@ export default function HomePage() {
         title={
           <div className="flex items-center gap-2">
             <Image
-              src="/"
+              src="/p1.png"
               alt="Caroline Mwenda"
               width={24}
               height={24}
               className="rounded-full border-2 border-white"
             />
-            <span>nash</span>
+            <span>Caroline Mwenda</span>
           </div>
         }
       >
         <main className="min-h-screen bg-blue-100 text-[#095e63] px-4 py-12 flex flex-col items-center">
 
-          {/* Hero */}
+          {/* Hero Section */}
           <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-10 mb-16">
             <div className="flex-1">
-              <h2 className="text-2xl sm:text-5xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-5xl font-bold mb-4 relative inline-block text-[#095e63] glow-text">
                 Hi, I am Caroline Kanana Mwenda
               </h2>
               <p className="text-base sm:text-lg leading-relaxed mb-3">
@@ -109,7 +109,7 @@ export default function HomePage() {
               className="relative px-6 py-3 rounded-full text-white bg-black font-semibold transition hover:scale-105"
             >
               <span className="z-10 relative">Graphic Samples</span>
-              <span className="absolute inset-0 rounded-full border-2 border-white animate-pulse opacity-40"></span>
+              <span className="absolute inset-0 rounded-full border-2 border-white animate-pulse opacity-40 pointer-events-none"></span>
             </a>
           </div>
 
@@ -163,11 +163,11 @@ export default function HomePage() {
               {/* Reveal Card */}
               <div className="w-full bg-[#0E0E10] rounded-2xl flex justify-center items-center h-[24rem]">
                 <TextRevealCard
-                  text="I design and develop your Imagination."
-                  revealText="Code it. Build it. Ship it!"
+                  text="I design and develop your imagination."
+                  revealText="Let's build it together!"
                 >
                   <TextRevealCardTitle>
-                    I design and develop your Imagination.
+                    I design and develop your imagination.
                   </TextRevealCardTitle>
                   <TextRevealCardDescription>
                     Ready to design, develop, and deploy digital solutions tailored to your needs.
@@ -175,40 +175,24 @@ export default function HomePage() {
                 </TextRevealCard>
               </div>
 
-              {/* Form */}
+              {/* Contact Form */}
               <div className="bg-gray-200 text-black rounded-xl p-8">
                 <form className="space-y-5">
                   <div>
                     <label className="block font-semibold mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-2 rounded border border-gray-300"
-                      placeholder="Enter your name"
-                    />
+                    <input type="text" className="w-full px-4 py-2 rounded border border-gray-300" placeholder="Enter your name" />
                   </div>
                   <div>
                     <label className="block font-semibold mb-1">Company</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-2 rounded border border-gray-300"
-                      placeholder="Company name"
-                    />
+                    <input type="text" className="w-full px-4 py-2 rounded border border-gray-300" placeholder="Company name" />
                   </div>
                   <div>
                     <label className="block font-semibold mb-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-2 rounded border border-gray-300"
-                      placeholder="Phone number"
-                    />
+                    <input type="tel" className="w-full px-4 py-2 rounded border border-gray-300" placeholder="Phone number" />
                   </div>
                   <div>
                     <label className="block font-semibold mb-1">Email</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-2 rounded border border-gray-300"
-                      placeholder="you@example.com"
-                    />
+                    <input type="email" className="w-full px-4 py-2 rounded border border-gray-300" placeholder="you@example.com" />
                   </div>
                   <button
                     type="submit"
@@ -223,7 +207,7 @@ export default function HomePage() {
         </main>
       </FollowerPointerCard>
 
-      {/* Scroll animation */}
+      {/* Custom Styles */}
       <style jsx>{`
         @keyframes scroll {
           0% {
@@ -233,8 +217,45 @@ export default function HomePage() {
             transform: translateX(-50%);
           }
         }
+
         .animate-scroll {
           animation: scroll 20s linear infinite;
+        }
+
+        @keyframes light-beam {
+          0% {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+        }
+
+        .glow-text {
+          position: relative;
+          text-shadow: 0 0 10px #5eead4, 0 0 20px #0891b2;
+        }
+
+        .glow-text::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            transparent 0%,
+            #a5f3fc 50%,
+            transparent 100%
+          );
+          animation: light-beam 3s infinite linear;
+          z-index: -1;
         }
       `}</style>
     </>
